@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>회원가입양식</title>
+    </head>
+    <body>
+    <div>
+        <table>
+            <caption>
+                <img src="naver.jpg" alt="네이버로고">
+                회원가입
+            </caption>
+            <tr>
+                <td>이름</td>
+                <td>
+                    <input type="text" placeholder="이름을 입력하세요.">
+                </td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <input type="radio" name="gender"> 남성
+                    <input type="radio" name="gender"> 여성
+                </td>
+            </tr>
+            <tr>
+                <td>나이</td>
+                <td>
+                    <input type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>생년월일</td>
+                <td>
+                    <input type="date">
+                </td>
+            </tr>
+            <tr>
+                <td>약관동의</td>
+                <td>
+                    <label for="agree">네이버 이용약관 동의(필수)</label> 
+                    <input type="checkbox" name="agree" id="agree">
+
+                    <label for="agree2">개인정보 수집 및 이용안내</label> 
+                    <input type="checkbox" name="agree" id="agree2">
+                </td>
+            </tr>
+            <tr>
+                <td>본인확인 이메일</td>
+                <td>
+                    <input type="email">
+                    <input type="submit" value="전송">
+                    <input type="reset" value="다시전송">
+                </td>
+            </tr>
+            <tr>
+                <td>휴대전화번호</td>
+                <td><input type="tel"></td>
+            </tr>
+            <tr>
+                <td>본인확인 사진 첨부</td>
+                <td><input type="file"></td>
+            </tr>
+        </table>
+    </div>     
+    </body>
+</html>

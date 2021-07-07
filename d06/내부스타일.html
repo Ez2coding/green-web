@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>내부스타일</title>
+        <style>
+            div{width:100px; height:100px; background:#fce;}
+            /*
+            태그명{스타일속성:값;}
+            태그명으로 선택자 자리 사용할 경우,
+            해당태그 전체 모두에 동일한 스타일이 적용됨.
+            예) div태그가 100라면, 100개 모두에게 동일한 스타일이 적용.
+            */
+            #box{width:200px; height:200px; background:#000;}
+            .box{width:150px; height:150px; background:#00f;}
+           
+            /*
+            #아이디명{}
+            : 주로 사이트 영역을 구분지을때 사용.
+            하나의 html문서에서 1번밖에 사용 못함.
+
+            .클래스명{}
+            : 주로 영역안에 작은단위의 영역들은 대부분 클래스로
+            이름 지음.
+            동일한 클래스 이름을 반복사용 가능함.
+            */
+            #d1{width:800px; height:400px; background:#fff; border:2px solid #000;}
+            #d1 .y1{background:#fe0; font-size:22px;}
+            .r1{color:#f00; font-weight: normal; font-size:32px;}
+
+            #d2{width:700px; height:300px; background:#ddd;}
+            #d2 .r1{color:#00f;}
+            #d3{}
+        </style>
+    </head>
+    <body>
+    <div></div>
+    <div id="box"></div>
+    <div class="box"></div>    
+    <br><br><br>
+    <div id="d1">
+        <h1 class="y1">작가 : 한세주 (유아인)</h1>
+        <p>문단의 아이돌, 다작의 <span class="y1">황태자
+
+        </span>, 써내는 족족 절판! 덕분에 저작권 재벌이 된 
+        <strong class="r1">유명</strong> 베스셀러 작가이다.</p>
+    </div>
+
+    <div id="d2">
+        <h1>음원챠트</h1>
+        <ol>
+            <li>바라만본다 -MSG워너비</li>
+            <li class="r1">헤픈우연 -헤이즈</li>
+            <li>롤린 -브레이브걸스</li>
+        </ol>
+    </div>
+    </body>
+</html>
