@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>연습2</title>
+        <style>
+         #paper1{width:300px; background:#9fc;      
+                    border-top:2px dotted #f00;
+                    border-bottom:2px dashed #00f;}  
+         #paper1 .title{color:#390; text-align:center;}        
+         #paper1 ul li{border-bottom:3px solid #000;}   
+         #paper1 ul .yell{background:#ff0; text-align:right;}     
+         /*
+         text-align 속성은 글자정렬 뿐 아니라,
+         인라인요소인 태그들의 가로정렬도 변경할 수 있음.
+         */
+
+         #paper2{width:500px; background:#ccc;}
+         #paper2 h1{font-weight:normal; color:#00f; text-align:center;}
+         #paper2 table{width:400px; background:#fff;
+                            border:1px solid #000;
+                            border-collapse:collapse;}
+         #paper2 table tr{height:60px;}
+         #paper2 table tr td{border:1px solid #000;}
+        </style>
+    </head>
+    <body>
+    <div id="paper1">
+        <h1 class="title">이미지 리스트</h1>
+        <ul>
+            <li><img src="img/kakao1.jpg" alt="카카오1"></li>
+            <li class="yell">
+                <img src="img/kakao2.jpg" alt="카카오2">
+            </li>
+            <li><img src="img/kakao3.jpg" alt="카카오3"></li>
+        </ul>
+    </div>    
+    <br>
+    <br>
+    <br>
+    <div id="paper2">
+        <h1>설문지를 작성하세요.</h1>
+        <table>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" placeholder="이름을 작성하세요."></td>
+            </tr>
+            <tr>
+                <td>수강과목</td>
+                <td>
+                    <input type="radio" name="web"> 웹디자인
+                    <input type="radio" name="web"> 웹퍼블리셔
+                </td>
+            </tr>
+        </table>
+    </div>
+    </body>
+</html>
