@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>가로배열</title>
+        <style>
+          /*초기화 설정*/
+          *{margin:0; padding:0;}
+          /* 유니버셜셀렉터 = 전체선택자 = 모든태그선택해줌
+          => 모든 태그를 선택해서 자체적으로 가지고있는 여백을 없앰.
+          => 브라우저가 가지는 자체 여백값도 함께 없앰. */
+          ul{list-style:none;}
+          /*<li>태그의 기호모양을 없애줌.
+            none이란? "없애다" 라는 뜻. */  
+          
+
+           #d1{background:#96f; width:430px;}
+           #d1:after{content:""; display:block; clear:both;}
+           #d1 p{width:100px; height:100px; 
+                    background:#fcf; float:left; margin-right:10px;} 
+           #d1 .last{margin-right:0;}    
+           
+           #d2{background:#6ef; width:453px;}
+           /*
+           #d2의 박스모델 가로값: (100+2+15) x 4 =468-15=453
+           */
+           #d2:after{content:""; display:block; clear:both;}
+           #d2 p{width:100px; height:100px;
+                    border:1px solid #000;
+                    background:#0cc; float:right;
+                    margin-left:15px;}
+           #d2 .last{margin-left:0;}      
+           
+           #d3{background:#fcf; width:480px;}
+           #d3:after{content:""; display:block; clear:both;}
+           #d3 p{width:150px; height: 150px;
+                    background:#99f; float: left;
+                    margin-right:15px;
+                    margin-top:0; margin-bottom:15px;}
+           #d3 .last{margin-right:0;}    
+           
+           #d4{background:#ff9; width:650px;}
+           /* li1개너비값 (150+25)=175 x 3
+           p2개너비값 (50+25+50) = 125  */
+           #d4:after{content:""; display: block; clear: both;}
+           #d4 ul{float: left; margin-right:25px;}
+           #d4 ul:after{content:""; display: block; clear: both;}
+           #d4 ul li{width:150px; height:100px; background:#6c0;
+                      float: left; margin-right:25px;}
+           #d4 ul .last{margin-right:0;}           
+           #d4 p{width:50px; height:50px; background:#f6f;
+                   float: left;}
+           #d4 .p1{margin-right:25px;}
+        </style>    
+    </head>
+    <body>
+     <!--
+     == 태그를 가로배열 할 수 있는 5가지 속성 ==
+     1) float / :after
+     2) display:inline / display:inline-block
+     3) display:table / display:table-cell
+     4) display:flex
+     5) display:grid (css그리드)     
+     -->   
+     <div id="d1">
+         <p>왼쪽1</p>
+         <p>왼쪽2</p>
+         <p>왼쪽3</p>
+         <p class="last">왼쪽4</p>
+     </div>
+
+     <div id="d2">
+         <p>오른쪽1</p>
+         <p>오른쪽2</p>
+         <p>오른쪽3</p>
+         <p class="last">오른쪽4</p>
+     </div>
+
+     <div id="d3">
+         <p>d3_1</p>
+         <p>d3_2</p>
+         <p class="last">d3_3</p>
+         <p>d3_4</p>
+         <p>d3_5</p>
+         <p class="last">d3_6</p>
+     </div>
+
+     <div id="d4">
+         <ul>
+             <li>리스트1</li>
+             <li>리스트2</li>
+             <li class="last">리스트3</li>
+         </ul>
+         <p class="p1">p1</p>
+         <p>p2</p>
+     </div>
+    </body>
+</html>
