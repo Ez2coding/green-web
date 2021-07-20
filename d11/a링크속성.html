@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>a링크 속성</title>
+        <style>
+            a{color:#000; text-decoration:none;}
+            /*
+            a태그 상태를 초기화 시킴(일반글자의모양)
+            원래기본상태 : 파랑, 밑줄 => 검정, 밑줄없애기
+            밑줄없애기 : text-decoration:none;
+            밑줄추가    : text-decoration:underline;
+            */
+            a:link{color:#f00;}
+            a:hover{color:#0f0; text-decoration:underline;}
+            a:active{background:#fe0;}
+            a:visited{background:#f5c;}
+        </style>
+    </head>
+    <body>
+    <p><a href="한번도 클릭한적이 없는 상태">link</a></p>
+    <p><a href="링크 위에 마우스를 올린 상태">hover</a></p>    
+    <p><a href="마우스로 클릭~하고 있는 동안~">active</a></p>
+    <p><a href="이미 방문한 후의 상태">visited</a></p>
+    
+    <p><a href="#">임시링크</a></p>
+    </body>
+</html>
