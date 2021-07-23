@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>태그배치연습</title>
+        <style>
+        *{margin:0; padding:0;}
+        ul{list-style:none;}
+        a{color:#000; text-decoration:none;}
+        img{border:none; vertical-align:top;}
+        /*
+        img태그 초기화 :
+        1) a태그 안에 있는 img태그 투명테두리를 가지게 됨.
+        => 약간의 두께를 가지기 때문에 투명"테두리"를 없애야함.
+        2) 브라우저마다 img의 세로정렬값이 각기 다름.
+        => 세로정렬을 위쪽으로 통일시켜 줘야함.
+        */
+
+        #list1{background:#ff8; width:1030px; position:relative;}
+        #list1 .title{font-size:20px; margin-bottom:25px;}
+        #list1 .product{}
+        #list1 .product ul{}        
+        #list1 .product ul:after{content:""; display:block; clear:both;}
+        #list1 .product ul li{float: left; border:1px solid #000;
+                                 width:328px; height:268px;
+                                 background:#fff;
+                                 margin-right:20px;}/*토탈330x270*/
+        /*1030-(330x3)=40 / 2 = 20*/
+        #list1 .product ul .last{margin-right:0;}     
+        #list1 .product ul li .photo{margin-bottom:20px;}
+        #list1 .product ul li .text{font-size:15px; font-weight: bold;
+                                        text-align:center;}
+        #list1 .more{position:absolute; top:0; right:0; font-weight: bold;}                                
+        
+        #list2{background:#fe0; width:322px; padding:20px;}
+        #list2 .title{font-size:22px; border-bottom:1px solid #000;
+                      padding-bottom:10px;
+                      margin-bottom:20px;}
+        #list2 ul{}
+        #list2 ul:after{content:""; display: block; clear: both;}
+        #list2 ul li{float: left;}
+        #list2 ul .k1{margin-right:10px; margin-bottom:10px;}
+        #list2 ul .k3{margin-right:10px;}
+        #list2 ul .k4{width:154px; height: 104px;
+                        border:1px solid #000;
+                        background:#fff;
+                        text-align: center;
+                        padding-top:50px;}/*토탈156x156*/
+        #list2 ul .k4 a:hover{color:#f00;}               
+        </style>
+    </head>
+    <body>
+     <div id="list1">
+         <h1 class="title">뷰티 메이크업</h1><!--.title-->
+         <div class="product">
+             <ul>
+                 <li><a href="#">
+                    <p class="photo">
+                        <img src="img/list1_1.jpg" alt="안경메이크업">
+                    </p><!--.photo-->
+                    <p class="text">안경 메이크업</p><!--.text-->    
+                 </a></li>
+                 <li><a href="#">
+                    <p class="photo">
+                        <img src="img/list1_2.jpg" alt="면접프리패스메이크업">
+                    </p><!--.photo-->
+                    <p class="text">면접 프리패스 메이크업</p><!--.text-->    
+                 </a></li>
+                 <li class="last"><a href="#">
+                    <p class="photo">
+                        <img src="img/list1_3.jpg" alt="퍼스널컬러메이크업">
+                    </p><!--.photo-->
+                    <p class="text">퍼스널 컬러 메이크업</p><!--.text-->    
+                 </a></li>
+             </ul>
+         </div><!--.product-->
+         <p class="more"><a href="#">
+             MORE &gt;
+         </a></p><!--.more-->
+     </div><!--#list1-->  
+
+     <div id="list2">
+         <h1 class="title">카카오 프렌즈</h1><!--.title-->
+         <ul>
+             <li class="k1"><a href="#">
+                 <img src="img/kakao1.jpg" alt="카카오1">
+             </a></li>
+             <li class="k2"><a href="#">
+                <img src="img/kakao2.jpg" alt="카카오2">
+            </a></li>
+            <li class="k3"><a href="#">
+                <img src="img/kakao3.jpg" alt="카카오3">
+            </a></li>
+            <li class="k4"><a href="#">
+                프렌즈 <br>
+                더보기
+            </a></li>
+         </ul>
+     </div><!--#list2--> 
+    </body>
+</html>
+
+
+
+
