@@ -1,0 +1,73 @@
+@charset "utf-8";
+*{margin:0; padding:0;}
+body{font-size:12px; line-height:18px; font-family:'맑은 고딕', Malgun Gothic, sans-serif;}
+a{color:#111; text-decoration:none;}
+ul{list-style:none;}
+
+#wrap{}
+#header{width:100%; height:150px; background:#e8d;}
+#headerIn{width:980px; height:150px; background:#cef;
+              margin:0 auto; position: relative;}
+/*블록요소태그 가운데 배치하는 공식
+선택자{width:값; margin:0 auto;}
+=> margin:0 auto 의 뜻은 
+     위/아래 여백=0 없고, 좌/우 여백=auto 자동으로 
+     가로에서 가운데 배치해라. 라는 뜻으로 이해하면 됨.
+     margin-top:0; 
+     margin-bottom:0;
+     margin-left:auto;
+     margin-right:auto;
+     4값 : margin:0 auto 0 auto;
+     3값 : margin:0 auto 0;
+     2값 : margin:0 auto; */
+.logo{text-align:center; padding-top:40px;}
+/*
+큰구조 안에서 첫번째 자식 태그의 영역에 
+위쪽으로 여백값을 추가할때는 
+margin-top을 사용하면 사이트 전체에 여백이 추가되어짐.
+*/
+.gnb{width:548px; margin:30px auto 0 auto;}
+.gnb ul{background:#fbf;}
+.gnb ul:after{content:""; display: block; clear:both;}
+.gnb ul li{width:100px; height: 30px; background:#b5f;
+            float: left; margin-right:12px;}
+.gnb ul .last{margin-right:0;}
+
+.utill{position: absolute; top:15px; right:0;}
+.utill ul{background:#fce;}
+.utill ul:after{content:""; display: block; clear: both;}
+.utill ul li{width:50px; height: 20px; background:#f9b;
+            float: left; margin-left: 10px;}
+          
+/*메인슬라이더 영역*/
+#mainSlider{width:100%; height:450px; background:#0c1;}
+#msIn{width:980px; height: 450px; background:#9fe;
+        margin:0 auto; position: relative;}
+#msIn .btnL{width:80px; height: 40px; background:#7e0;
+                position:absolute; left: 0; top:205px;}
+#msIn .btnR{width:80px; height: 40px; background:#7e0;
+                position:absolute; right:0; top:205px;}     
+#msIn .pager{position: absolute; bottom:33px; left:442px;}
+#msIn .pager ul{}
+/*
+float사용한 부모태그에 :after 항상 작성해야함.
+예외) float를 적용한 부모, 조부모, 증조부모 position:absolute
+적용된 대상이 있을 경우, 독립, 분리가 되기때문에 
+구조상 인식하지 않으므로, :after를 생략해도 무방함.
+왜) :after를 쓰는 이유는 사라진 높이값을 잡아주기 위함인데,
+포지션을 가지면 독립, 분리가 되어 구조에 영향을 미치지 
+않으므로 생략 or 생략안하든 무관함.
+*/
+#msIn .pager ul li{width:17px; height: 17px; background:#f00;
+                       float: left; margin-right: 15px;}
+/*컨테이너 본문영역*/
+#container{background:#fe0;}
+#container .inner{width:980px; background:#cff; margin:0 auto;
+                      padding:70px 0;}
+#container .inner .title{width:415px; height: 25px; background:#f70;
+                              margin:0 auto 40px;}
+#container .inner .banner{width:890px; margin:0 auto;}
+#container .inner .banner:after{content:""; display: block; clear: both;}
+#container .inner .banner div{width:280px; height: 300px; background:#fc4;
+                         float: left; margin-right:25px;}
+ #container .inner .banner .bn3{margin-right:0;}                        
