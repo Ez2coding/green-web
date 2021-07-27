@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>배경개별속성</title>
+        <style>
+            #box{background:#ddd; margin-bottom:100px;
+                   padding:20px;}
+            #box p{width:90%; height: 350px; text-align:center;
+                      border:1px solid #000; font-size:20px;}    
+            /*
+            배경속성은 공간값이 없거나, 정확하지 않으면
+            원하는대로 출력되지 않음.
+            */       
+            .p1{background-color:#ff6;}   
+            .p2{background-image:url(img/kakao1.jpg);}   
+            .p3{background-image:url(img/kakao2.jpg);
+                /*background-repeat:no-repeat;*/
+                background-repeat:repeat-y;}
+
+        </style>
+    </head>
+    <body>
+    <div id="box">
+        1. background-color속성 : 배경 색상만
+        <p class="p1">p1</p>
+    </div><!--#box--> 
+    <div id="box">
+        2. background-image 속성. <br>
+        : 배경 이미지 적용하는 속성. <br>
+        *기본형태 : 가로 x 세로 무한반복해서 이미지 출력함. <br>
+        {background-image:url(이미지경로);}
+        <p class="p2">p2</p>
+    </div><!--#box--> 
+    <div id="box">
+        3. background-repeat 속성. <br>
+        : 배경이미지의 반복여부를 설정하는 속성. <br>
+
+        1) background-repeat:no-repeat <br>
+        => 반복없이 원본 1번만 출력 <br>
+
+        2) background-repeat:repeat-x <br>
+        => x 가로만 반복 <br>
+
+        3) background-repeat:repeat-y <br>
+        => y 가로만 반복
+
+        <p class="p3">p3</p>
+    </div><!--#box-->    
+    <div id="box">
+        4. background-position 속성. <br>
+        : 배경이미지가 출력될 위치를 설정 하는 속성. <br>
+
+        *기본형태 : 해당태그의 왼쪽,위쪽 (0,0) 기준으로 출력됨.<br>
+
+        1) 숫자값으로 표현 <br>
+
+        2) 방향에 대한 영어키워드로 표현 <br>
+        가로위치 : left / center / right <br>
+        세로위치 : top / center / bottom <br>
+
+        3) 숫자값+키워드 / 키워드+숫자값 <br>
+        4) 숫자값으로 표현시 양수(+) / 음수(-) 둘다 표현가능<br>
+        <p class="p4">p4</p>
+    </div><!--#box--> 
+    </body>
+</html>
