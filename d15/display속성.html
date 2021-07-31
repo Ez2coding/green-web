@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>display속성</title>
+        <style>
+            div{width:100px; height: 100px; background:#ff0;
+                display:inline-block;}
+            span{width:150px; height: 150px; background:#369;
+                   display:block;}
+            p{width:150px; height: 70px; background:#fea;}
+            p strong{display:none;}  /*안보이게 함*/ 
+            p:hover strong{display:block;} /*마우스하버시 strong태그 보이게함*/
+        /*
+        == display 속성 ==
+        1) {display:block}
+        : 블록요소
+        - 세로정렬, 자동줄바꿈.
+        - 기본 가로너비값을 부모태그영역의 100%로 인식함.
+        - 가로x세로 공간값을 적용 시킬수 있음.
+        - 사이트의 구조/영역을 구분지을때 주로 사용.
+        <div> <p> <ul> <ol> <li> <dl> <dt> <dd>
+        <h1~h6>...   
+        ** {display:block} 은 2가지 형식으로 사용됨.
+        (1) 인라인요소 태그를 블록요소화 시켜 공간값 인식시킬때 사용.
+        (2) none값으로 사라진 태그를 block으로 보이게 할때 사용.
+        
+        2) {display:inline}
+        : 가로배열
+        - 기본 가로너비값을 자신의 안쪽에 작성된 텍스트나
+        이미지의 양만큼만 인식함.
+        - 가로x세로 공간값 인식, 적용 할 수 없음.
+        - 주노 내용을 담당하는 영역에 사용.
+        <a> <span> <strong> ....    
+
+        3) {display:inline-block}
+        - 기본은 inline 요소. (가로배열)
+        - 인라인 요소이면서 + block요소의 가로x세로 공간값
+          을 적용 시킬 수 있는 특징을 가짐.
+        - float대신 사용하지 않음.
+        <img> <input> ...   
+
+        4) {display:none}
+        - 해당 속성을 가지면 태그는 아예 html구조상에서
+          삭제되어 없어지게 됨.
+        - 공간도 없어지고, 디자인상 화면에 출력도 되지 
+          않는 상태가 되어버림.
+        - 주로 안보이게했다 - 보이게 할때 사용함.
+        - {display:block} 사라진 태그를 보이기 위해 
+          block 속성값을 함께 사용하기도 함.    
+        */
+        
+        
+        </style>
+    </head>
+    <body>
+    <div>div태그</div>
+    <div>div태그</div>
+    <div>div태그</div>    
+    <span>span태그</span>
+    <span>span태그</span>
+    <span>span태그</span> 
+    <p>
+        <strong>strong태그</strong>
+    </p>   
+    </body>
+</html>
