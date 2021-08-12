@@ -1,0 +1,84 @@
+@charset "utf-8";
+#wrap{}
+
+#header{width:100%; height:103px; background:rgba(107, 61, 17, 0.75);}
+/*
+색상값을 표기할때  #헥스코드, rgb(), rgba()
+rgb(빨강, 그린, 블루) 숫자값사용, 0~255까지 사용.
+rgba(빨강, 그린, 블루, 투명도)
+투명도 0~1사이 소수점으로 표기
+0%         0   => 투명
+50%      0.5  => 반투명
+100%      1   => 불투명
+*/
+#headerIn{width:980px; height: 103px; background:#f20; margin:0 auto;
+             position:relative;}
+.logo{padding-top:20px;}
+
+.gnb{position:absolute; top:60px; right:0;}
+.gnb h2{display: none;}
+.gnb ul{}
+.gnb ul:after{content:""; display:block; clear:both;}
+.gnb ul li{float: left; margin-left:57px;}
+.gnb ul li a{color:#fff; font-size:18px; font-weight: bold;}
+.gnb ul li:hover a{color:#e80;}
+
+.utill{position:absolute; top:20px; right:0;}
+.utill ul{}
+/*:after 생략가능.
+이유는? :after를 가질 태그 or 부모, 조부모가 position 독립,분리
+되어있으면 구조상 아예 빠져버리니까 :after 높이값
+잡아주지 않아도 되기 때문에*/
+.utill ul li{float: left; margin-right: 10px; padding-right:16px;
+            background:url(../img/h_utill_divider.png) no-repeat right center;}
+.utill ul .ico{margin-right:0; padding-right:0; background:none;}
+.utill ul li a{color:#fff;}
+.utill ul .ico a{display: block; padding-left:20px;
+                background:url(../img/h_utill_ico.png) no-repeat;}
+
+/*메인슬라이더영역*/           
+#mainSlider{width:100%; height:706px;
+                background:url(../img/mainslider.jpg) no-repeat center 0;}
+#mainSlider #msIn{width:980px; height:706px; margin:0 auto;
+                        /*background:#0db;*/ position: relative;}   
+
+#mainSlider #msIn .sTxt{padding-top:188px; margin-left: 90px;}
+#mainSlider #msIn .sTxt .title{
+    font-size:50px; line-height: 50px; 
+    font-weight: 700; color:#630;
+    margin-bottom:40px;}
+#mainSlider #msIn .sTxt .title strong{
+    display: block; color:#fff; font-size:80px; line-height:80px;}
+
+#mainSlider #msIn .sTxt .bar{
+    display: block; width:26px; height: 2px; background:#fff;
+    margin-bottom:20px;
+}
+
+#mainSlider #msIn .sTxt .info{
+    font-size:16px; color:#fff; line-height:24px;}
+
+
+ /* {text-indent:-9999px;}
+ 디자인상 글자만 보이지 않게 처리할때 사용.
+ 글자 들여쓰기할때사용하는 속성으로 
+ (+)양수 : 오른쪽으로 글자가 들여쓰기
+ (-)음수 : 왼쪽으로 글자가 들여쓰기 
+ -9999px을 준 이유는?
+ 모니터, 컴퓨터 해상도 천단위중 가장 큰 숫자를 사용하여
+ 모든종류의 모니터, 컴퓨터에서 글자가 왼쪽으로 들여써줘서
+ 화면상 보이지 않게 처리하기 위함. */   
+
+
+
+ #mainSlider #msIn .btnL{position:absolute; left:0; top:322px;}
+ #mainSlider #msIn .btnR{position:absolute; right:0; top:322px;}
+
+ /*버튼 공통값*/
+ #mainSlider #msIn .btnL a,
+ #mainSlider #msIn .btnR a{display:block; width:40px; height: 62px;
+    background-image:url(../img/mainSlider_btn.png);
+    background-repeat:no-repeat;
+    text-indent:-9999px;}
+/*버튼 개별값*/
+#mainSlider #msIn .btnR a{background-position:-40px 0;}
