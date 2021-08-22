@@ -1,0 +1,217 @@
+@charset "utf-8";
+#wrap{}
+
+#header{width:100%; height:103px; background:rgba(107, 61, 17, 0.75);}
+/*
+색상값을 표기할때  #헥스코드, rgb(), rgba()
+rgb(빨강, 그린, 블루) 숫자값사용, 0~255까지 사용.
+rgba(빨강, 그린, 블루, 투명도)
+투명도 0~1사이 소수점으로 표기
+0%         0   => 투명
+50%      0.5  => 반투명
+100%      1   => 불투명
+*/
+#headerIn{width:980px; height: 103px; background:#f20; margin:0 auto;
+             position:relative;}
+.logo{padding-top:20px;}
+
+.gnb{position:absolute; top:60px; right:0;}
+.gnb h2{display: none;}
+.gnb ul{}
+.gnb ul:after{content:""; display:block; clear:both;}
+.gnb ul li{float: left; margin-left:57px;}
+.gnb ul li a{color:#fff; font-size:18px; font-weight: bold;}
+.gnb ul li:hover a{color:#e80;}
+
+.utill{position:absolute; top:20px; right:0;}
+.utill ul{}
+/*:after 생략가능.
+이유는? :after를 가질 태그 or 부모, 조부모가 position 독립,분리
+되어있으면 구조상 아예 빠져버리니까 :after 높이값
+잡아주지 않아도 되기 때문에*/
+.utill ul li{float: left; margin-right: 10px; padding-right:16px;
+            background:url(../img/h_utill_divider.png) no-repeat right center;}
+.utill ul .ico{margin-right:0; padding-right:0; background:none;}
+.utill ul li a{color:#fff;}
+.utill ul .ico a{display: block; padding-left:20px;
+                background:url(../img/h_utill_ico.png) no-repeat;}
+
+/*메인슬라이더영역*/           
+#mainSlider{width:100%; height:706px;
+                background:url(../img/mainslider.jpg) no-repeat center 0;}
+#mainSlider #msIn{width:980px; height:706px; margin:0 auto;
+                        /*background:#0db;*/ position: relative;}   
+
+#mainSlider #msIn .sTxt{padding-top:188px; margin-left: 90px;}
+#mainSlider #msIn .sTxt .title{
+    font-size:50px; line-height: 50px; 
+    font-weight: 700; color:#630;
+    margin-bottom:40px;}
+#mainSlider #msIn .sTxt .title strong{
+    display: block; color:#fff; font-size:80px; line-height:80px;}
+
+#mainSlider #msIn .sTxt .bar{
+    display: block; width:26px; height: 2px; background:#fff;
+    margin-bottom:20px;
+}
+
+#mainSlider #msIn .sTxt .info{
+    font-size:16px; color:#fff; line-height:24px;}
+
+
+ /* {text-indent:-9999px;}
+ 디자인상 글자만 보이지 않게 처리할때 사용.
+ 글자 들여쓰기할때사용하는 속성으로 
+ (+)양수 : 오른쪽으로 글자가 들여쓰기
+ (-)음수 : 왼쪽으로 글자가 들여쓰기 
+ -9999px을 준 이유는?
+ 모니터, 컴퓨터 해상도 천단위중 가장 큰 숫자를 사용하여
+ 모든종류의 모니터, 컴퓨터에서 글자가 왼쪽으로 들여써줘서
+ 화면상 보이지 않게 처리하기 위함. */   
+
+ #mainSlider #msIn .btnL{position:absolute; left:0; top:322px;}
+ #mainSlider #msIn .btnR{position:absolute; right:0; top:322px;}
+
+ /*버튼 공통값*/
+ #mainSlider #msIn .btnL a,
+ #mainSlider #msIn .btnR a{display:block; width:40px; height: 62px;
+    background-image:url(../img/mainSlider_btn.png);
+    background-repeat:no-repeat;
+    text-indent:-9999px;}
+/*버튼 개별값*/
+#mainSlider #msIn .btnR a{background-position:-40px 0;}
+
+/*컨테이너 본문영역*/
+/* 본문영역정리
+1) #container 전체영역에 bg_container.jpg 배경으로 반복으로 지정함.
+=> 모니터, 해상도 크기 상관없이 전체 배경으로 가득차 보이게 하기위해
+
+2) #contWrap 영역은 가장많이 사용하는 해상도크기 1920px에 
+    맞춰 inner(실제 컨텐츠가 들어올 영역) 좌-우로 곡물 이미지가 보일 수있게
+    bg_contWrap.jpg 배경으로 지정함. (반복없음, 가운데배치)
+
+3) .inner 영역은 실제 컨텐츠들이 배치되는 영역.
+- 1,2번은 배경이 들어갈 공간이기 때문에 현재자리 그대로 위치 해야함.
+- 3)번 .inner영역만 #mainSlider 영역 위로 겹쳐서 배치되어야 함.
+=> .inner가 위쪽으로 올라가야 하는데
+   margin-top : - 마이너스 / position, top:-마이너스 
+   =>> 둘다 사용할 수 없음. 적용안됨.
+
+4) 그래서 사이트 구조를 3단구조 로 수정 해야함.
+
+5) #container의 배경 삭제.
+   컨테이너 배경 전체로 들어갈 공간을 1개더 지정해 줘야함.
+   .contWrap을 싸는 .contents 영역을 생성할것임. */
+
+#container{}
+
+.contents{background:url(../img/bg_container.jpg);} /*전체반복배경*/
+
+.contWrap{width:100%; height: 834px; position: relative;
+              background:url(../img/bg_contWrap.jpg) no-repeat center 0;}/*곡물배경*/
+
+#container .inner{width:980px; /*margin:-60px auto 0 auto;*/ background:#fce;
+                       position:absolute; left:50%; top:-60px; margin-left:-490px;}
+/*
+1. {text-align:center} <= 글자와 인라인요소 가운데 배치하는 방법
+
+2. {width:값; margin:0 auto;} <=블록요소 가운데 배치하는 방법
+
+3. {position:absolute} 가진 태그를 가운데 배치하는 공식
+{position:absolute; left:50%; top:값; margin-left:-현재태그너비의반값;}
+단, margin:0 auto 2번방법과 같이 사용할 수 없음.
+*/
+
+.mainRow1{margin-bottom: 10px;}                      
+.mainRow1:after{content:""; display: block; clear: both;}
+
+/*배너1*/
+.bn1{position: relative; float: left;}
+.bn1 .bn1Img{}
+.bn1 .bn1Img a{display:block; width:725px; height: 348px;
+                    background:url(../img/bn1_1.jpg) no-repeat;} /*725x348*/
+.bn1 .bnTxt{padding:30px;}
+.bn1 .bnTxt .tit{font-size:16px; font-weight: 700; color:#e80;
+                    width:267px; border-bottom:1px solid #aaa;
+                    padding-bottom:20px; margin-bottom:30px;}
+.bn1 .bnTxt .name1{font-size:38px; line-height:42px; font-weight: 700;
+                         margin-bottom: 15px;}
+.bn1 .bnTxt .subt{font-size:20px; line-height:24px;
+                      font-weight: 700; margin-bottom: 10px;}
+.bn1 .bnTxt .des{font-size:16px; line-height: 22px;
+                     letter-spacing:-0.5px;}
+/*글자와 글자사이의 간격 (자간)
+{letter-spacing:숫자값}
+(+) 양수 : 사이간격 넓어짐
+(-) 음수 : 사이간격 좁아짐 (겹치게도 가능)*/
+
+.bn1 .pager{width:120px; height: 27px;
+               background:url(../img/bn_btn.png) no-repeat;
+               position: absolute; left: 30px; bottom:25px;}
+.bn1 .pager:after{content:""; display: block; clear: both;}               
+.bn1 .pager p{}
+.bn1 .pager .prev{float:left;}
+.bn1 .pager .prev a{display: block; width:40px; height: 27px;
+                        /*background:#00f;*/ text-indent:-9999px;}
+.bn1 .pager .next{float:right;}
+.bn1 .pager .next a{display: block; width:40px; height: 27px;
+                        /*background:#f00;*/ text-indent:-9999px;}
+.bn1 .pager .num{color:#fff; font-size:14px; font-weight: 700;
+                       position:absolute; top:4.5px; left:49px;}
+
+/*배너2*/
+.bn2{position: relative; float: right;}
+.bn2 .bn2Img{}
+.bn2 .bn2Img a{display: block; width:245px; height: 348px;
+                    background:url(../img/bn2_1.jpg) no-repeat;}/*245x348*/
+.bn2 .bnTxt{padding:30px;}                     
+.bn2 .bnTxt .name2{font-size:30px; line-height: 34px; margin-bottom:15px;}
+.bn2 .bnTxt .des{}      
+
+.bn2 .pager{position:absolute; top:193px; left: 26px;}
+.bn2 .pager li{float: left; margin-right:15px;}
+/*공통값*/
+.bn2 .pager li a{display: block; width:12px; height: 12px;
+                    background-image:url(../img/btn_pager.png);
+                    background-repeat:no-repeat;
+                    background-position:-28px 0;
+                    text-indent:-9999px;}
+/*개별값 활성화*/                    
+.bn2 .pager .on a{background-position:0 0;}
+
+.mainRow2{}
+.mainRow2:after{content:""; display: block; clear: both;}
+
+/*배너3*/
+.bn3{float: left; margin-bottom: 10px;}
+.bn3 a{display: block; width:480px; height: 230px;
+        background:url(../img/bn3_1.jpg) no-repeat;}
+
+/*배너4*/
+.bn4{float: right;}
+.bn4 a{display: block; width:490px; height: 470px;
+        background:url(../img/bn4_bg.jpg) no-repeat;}
+
+/*배너5*/
+.bn5{float: left;}
+.bn5 a{display: block; width:480px; height: 230px;
+        background:url(../img/bn5_bg.jpg) no-repeat;}
+
+/*푸터영역*/
+#footer{width:100%; height: 100px; padding-top:30px; background:#533;}
+#footerIn{width:980px; height: 100px; background:#3a1;
+            margin:0 auto; color:#ccc;}
+.finfo{}
+.finfo .fmenu{margin-bottom:5px;}
+.finfo .fmenu a{color:#ccc; font-size:14px;}
+
+.comp{}
+.comp span{border-right:1px solid #ccc;
+               margin-right:10px; padding-right:10px;}
+.comp span:last-child{border-right:none;}               
+
+/*
+선택자 (첫째자식 / 막내자식)
+선택자:first-child{}         <= 첫째자식 태그 선택
+선택자:last-child{}          <= 막내자식 태그 선택
+*/
