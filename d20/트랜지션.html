@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>트랜지션</title>
+        <style>
+            #box, #box2, #box3{background:#ccc; padding:20px; margin-bottom: 20px;}
+            .d1{width:100px; height: 100px; background:#fcf;
+                transition:background 2s;}
+            .d1:hover{background:#28f;}
+
+            #box2 .d2{width:100px; height: 100px; background:#fc0;
+                         transition:margin 1s;}
+            #box2:hover .d2{margin-left:400px;}
+
+            #box3{height: 100px;}
+            #box3 .d3{width:100px; height: 100px; background:#f00;
+                         /*display: none;*/ opacity:0; transition:opacity 1s;}
+            #box3:hover .d3{/*display: block;*/ opacity:1;}           
+            /*
+            display속성은 값이 문자이기 때문에 transition과 함께 사용불가.
+
+            {opacity:숫자;}
+             => 투명도란뜻. (0~1사이 소수점단위로 숫자만 표기)
+             0     => 투명
+             0.5   => 반투명
+             1     => 불투명   
+            */  
+
+            #box4{position: relative;}
+            #box4 .on{position: absolute; top:0; left:0; opacity: 0;
+                         transition:opacity 1s;}
+            #box4:hover .on{opacity: 1;}
+        </style>
+    </head>
+    <body>
+     <!--
+      == css3 transition 속성 ==
+      : css속성 값의 변경을 통해 시간을 두고 움직임을
+        생성해주는 속성.
+        
+      transition이란 "다른 상태로의 변화" 뜻함.
+      움직임, 위치, 색상, 모양 등의 변화를 시간을 두고  적용할때 주로 많이 사용함.
+      (마우스 하버시 움직임 및 효과 적용)  
+
+      움직일대상{transition:css속성 시간;}
+      - 1초 = 1s
+      - 시간의 값이 적을수록 빨라지고, 많을수록 속도가 느려짐.
+      - 단, transition속성으로 만들 수 있는 움직임
+        css속성의값이 "숫자 또는 색상단위" 로 표현할 수 있는 대상에게만 적용가능. (문자안됨)
+     -->   
+
+     <div id="box">
+         <div class="d1">색상변화</div>
+     </div>
+     <div id="box2">
+         <div class="d2">움직임</div>
+     </div>
+     <div id="box3">
+          <div class="d3">안보임</div>
+     </div>
+     <div id="box4"><a href="#">
+        <img src="img/quick2.png">
+        <img src="img/quick3.png" class="on">
+    </a></div>
+    </body>
+</html>
